@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+<body>
+
+<div id="myPlot" style="width:100%;max-width:700px"></div>
+
+<script>
+var xArray = ['1,087,653', '686,849', '528,754', '387,991', '330,139'];
+var yArray = ["USA ", "Brazil ", "India ", "Russia ", "Mexico "];
+
+var data = [{
+  x:xArray,
+  y:yArray,
+  type:"bar",
+  orientation:"h",
+  text: xArray.map(String),
+  textposition: 'auto',
+  hoverinfo: 'none',
+  marker: {color:['rgb(120, 120, 120)', 'rgb(60, 179, 113)', 'rgb(255, 99, 71)', 'rgb(255, 163, 71)', 'rgb(157, 172, 222)']}
+}];
+
+var layout = {title:"Top 5 Countries With COVID-19 Deaths"};
+
+Plotly.newPlot("myPlot", data, layout);
+</script>
+
+</body>
+</html>
